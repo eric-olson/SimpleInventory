@@ -1,0 +1,32 @@
+<div class="col-md-6 col-md-offset-3 col-xs-12">
+  <h1>
+    <%= @inventory_item.name %> <small>#<%= @inventory_item.tag_id %></small>
+    <div class="pull-right">
+      <%= link_to 'Edit', edit_inventory_item_path(@inventory_item), :class => "btn btn-danger"%>
+      <%= link_to 'See all', inventory_items_path, :class => "btn btn-primary"%>
+    </div>
+  </h1>
+
+  <h3 class="text-success">
+    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    In Stock!
+    <small> (Littleton Campus) </small>
+  </h3>
+
+<!--
+  <h3 class="text-danger">
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    Checked Out
+    <small> (Staff Meeting) </small>
+  </h3>
+-->
+
+  <div class="well">
+    <%= @inventory_item.description %>
+  </div>
+  <a href="#" class="btn btn-lg btn-success btn-block">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Check Out
+  </a>
+
+</div>

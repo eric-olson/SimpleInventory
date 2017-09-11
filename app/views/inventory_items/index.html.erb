@@ -1,0 +1,26 @@
+<div class="col-md-8 col-md-offset-2 col-xs-12">
+  <h1>
+    Inventory List
+    <%= link_to 'New item', new_inventory_item_path, :class => "pull-right btn btn-primary" %>
+  </h1>
+
+  <table class="table">
+    <tr>
+      <th>Tag ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Show</th>
+      <th>Edit</th>
+    </tr>
+
+    <% @inventory_items.each do |inventory_item| %>
+      <tr>
+        <td><%= inventory_item.tag_id %></td>
+        <td><%= inventory_item.name %></td>
+        <td><%= inventory_item.description %></td>
+        <td><%= link_to 'Show', inventory_item_path(inventory_item) %></td>
+        <td><%= link_to 'Edit', edit_inventory_item_path(inventory_item) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
